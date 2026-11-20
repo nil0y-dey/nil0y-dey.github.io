@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Niloy Dey</title>
+  <meta name="description" content="Niloy Dey — prospective PhD student working on machine learning, uncertainty quantification, and decision support for manufacturing and supply chains.">
+  <meta property="og:title" content="Niloy Dey">
+  <meta property="og:description" content="Machine learning · uncertainty quantification · decision support">
+  <meta property="og:image" content="assets/profile.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1720'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='34' fill='%235eead4'%3End%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">niloy<span>.</span>dey</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#publications" data-sec="publications">Publications</a>
+      <a href="#research" data-sec="research">Research</a>
+      <a href="#experience" data-sec="experience">Experience</a>
+      <a href="#skills" data-sec="skills">Skills</a>
+      <a href="assets/Niloy_Dey_CV.pdf" class="nav-cv">CV</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span> Prospective PhD student</p>
+        <h1>Niloy Dey</h1>
+        <p class="lede">
+          I build machine-learning models that <em>know when they don't know</em> —
+          and study whether their predictions stay trustworthy when the world
+          shifts under them.
+        </p>
+        <p class="sub">
+          Industrial &amp; Production Engineering, SUST · Dhaka, Bangladesh
+        </p>
+        <div class="links">
+          <a class="btn primary" href="mailto:niloydey48@gmail.com">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email
+          </a>
+          <a class="btn" href="assets/Niloy_Dey_CV.pdf">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 17h4"/></svg>
+            CV
+          </a>
+          <a class="btn" href="https://scholar.google.com/citations?user=eOXYyJUAAAAJ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8z" opacity=".7"/></svg>
+            Scholar
+          </a>
+          <a class="btn" href="https://github.com/nil0y-dey" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/dey-niloy/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9.5h3zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3a3.2 3.2 0 0 1 2.8-1.6c3 0 3.6 2 3.6 4.6z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://researchgate.net/profile/Niloy-Dey-2/research" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="3" opacity=".18"/><text x="12" y="16.5" text-anchor="middle" font-size="10" font-weight="700" font-family="Inter,Arial">RG</text></svg>
+            ResearchGate
+          </a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <picture>
+          <source srcset="assets/profile.webp" type="image/webp">
+          <img src="assets/profile.jpg" alt="Portrait of Niloy Dey" width="640" height="640">
+        </picture>
+        <figcaption class="mono">ŷ ± q̂<sub>0.95</sub></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT ============================ -->
+  <section class="wrap section about" id="about">
+    <div class="section-head"><span class="num mono">01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="prose">
+        <p>
+          I'm an Industrial and Production Engineering graduate from
+          <strong>Shahjalal University of Science and Technology</strong>, and I'm looking for
+          a PhD position at the intersection of <strong>machine learning, uncertainty
+          quantification and operations</strong>.
+        </p>
+        <p>
+          My first-author paper in <em>Expert Systems with Applications</em> pairs Gaussian
+          process regression with conformal calibration to give distribution-free
+          prediction intervals for CO<sub>2</sub> laser engraving — and turns those intervals
+          into an automated accept / flag / reject quality gate. I'm now asking a harder
+          question: <em>when an ML surrogate is trained on calm operating data, can you still
+          trust the decisions it drives once the supply chain is disrupted?</em>
+        </p>
+        <p>
+          Before research full-time, I spent a year as a production engineer on electronics
+          assembly lines at PRAN-RFL Group — which is where I learned that a model is only as
+          good as the decision it supports.
+        </p>
+      </div>
+      <aside class="interests">
+        <h3 class="mono label">Research interests</h3>
+        <ul>
+          <li>Machine learning &amp; uncertainty quantification</li>
+          <li>Distribution shift &amp; conformal prediction</li>
+          <li>Intelligent decision support systems</li>
+          <li>Simulation-based optimization in manufacturing &amp; supply chains</li>
+          <li>Explainable AI &amp; model interpretability</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================ PUBLICATIONS ============================ -->
+  <section class="wrap section" id="publications">
+    <div class="section-head"><span class="num mono">02</span><h2>Publications</h2></div>
+
+    <h3 class="mono label">Peer-reviewed journal articles</h3>
+    <ol class="pubs">
+      <li class="pub">
+        <div class="pub-venue">
+          <span class="venue">ESWA</span>
+          <span class="mono year">2026</span>
+        </div>
+        <div class="pub-body">
+          <a class="pub-title" href="https://doi.org/10.1016/j.eswa.2026.134356" target="_blank" rel="noopener">
+            Robust conformal Gaussian process regression for CO<sub>2</sub> laser engraving: Distribution-free uncertainty quantification and automated quality gating
+          </a>
+          <p class="authors"><strong>Niloy Dey*</strong>, M. M. A. Khan, A. Sayem</p>
+          <p class="where"><em>Expert Systems with Applications</em>, 333 (Part G), 134356</p>
+          <div class="pub-badges"><span class="badge">First author</span><span class="badge">Q1 · IF 9.4</span><a class="badge link" href="https://doi.org/10.1016/j.eswa.2026.134356" target="_blank" rel="noopener">DOI ↗</a></div>
+        </div>
+      </li>
+      <li class="pub">
+        <div class="pub-venue">
+          <span class="venue">Heliyon</span>
+          <span class="mono year">2026</span>
+        </div>
+        <div class="pub-body">
+          <a class="pub-title" href="https://doi.org/10.1016/j.heliyon.2026.e44699" target="_blank" rel="noopener">
+            Machine learning approach to predict characteristics of grooves engraved on poly(methyl methacrylate) using CO<sub>2</sub> laser
+          </a>
+          <p class="authors">M. M. A. Khan, S. K. Nahar, <strong>Niloy Dey</strong>, A. Sayem, S. Saha</p>
+          <p class="where"><em>Heliyon</em>, 12(4), e44699</p>
+          <div class="pub-badges"><span class="badge">From B.Sc. thesis</span><span class="badge">Q1 · IF 4.1</span><a class="badge link" href="https://doi.org/10.1016/j.heliyon.2026.e44699" target="_blank" rel="noopener">DOI ↗</a></div>
+        </div>
+      </li>
+    </ol>
+
+    <h3 class="mono label">In preparation</h3>
+    <ol class="pubs prep">
+      <li class="pub">
+        <div class="pub-venue"><span class="venue ghost">M1</span></div>
+        <div class="pub-body">
+          <span class="pub-title plain">Decision-regret validation of machine-learning surrogates of supply-chain simulators under disruption</span>
+          <p class="authors"><strong>N. Dey</strong></p>
+        </div>
+      </li>
+      <li class="pub">
+        <div class="pub-venue"><span class="venue ghost">M2</span></div>
+        <div class="pub-body">
+          <span class="pub-title plain">Physics-informed machine learning for predictive modeling and optimization of laser-assisted turning</span>
+          <p class="authors">M. M. A. Khan, <strong>N. Dey</strong></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================ RESEARCH ============================ -->
+  <section class="wrap section" id="research">
+    <div class="section-head"><span class="num mono">03</span><h2>Research</h2></div>
+
+    <article class="project featured">
+      <div class="project-meta">
+        <span class="tag live">In progress</span>
+        <span class="mono date">Oct 2026 — present</span>
+      </div>
+      <h3>Decision-regret validation of ML surrogates under supply-chain disruption</h3>
+      <p class="muted">Independent research</p>
+      <p>
+        Do ML surrogates trained on undisrupted operating data stay reliable for downstream
+        inventory-policy decisions when disruptions hit? Rather than scoring prediction error,
+        I evaluate surrogates by <strong>decision regret</strong> — the cost of acting on the
+        surrogate instead of the truth.
+      </p>
+      <ul class="bullets">
+        <li>A SimPy multi-echelon supply-chain simulator serves as ground truth, with independent replication on the <a href="https://github.com/nil0y-dey/ISOMORPH_Hmod" target="_blank" rel="noopener">ISOMORPH model</a>.</li>
+        <li>Measuring policy-ranking stability, conformal coverage and sensitivity to disruption severity.</li>
+      </ul>
+      <div class="chips"><span>SimPy</span><span>Conformal prediction</span><span>Distribution shift</span><span>Inventory policy</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-meta">
+        <span class="tag">Published · ESWA</span>
+        <span class="mono date">Nov 2025 — Sep 2026</span>
+      </div>
+      <h3>Uncertainty-aware ML and quality gating for laser engraving</h3>
+      <p class="muted">Advisor: Dr. Mohammad Muhshin Aziz Khan · SUST</p>
+      <div class="project-split">
+        <ul class="bullets">
+          <li>Benchmarked five architectures (GPR, SVR, MLP, random forest, polynomial ridge) with Grey Wolf Optimizer–tuned hyperparameters over a 125-run full-factorial design.</li>
+          <li>Conformalized GPR prediction intervals reach <strong>≥ 94% empirical coverage</strong> at the 95% nominal level.</li>
+          <li>Built an uncertainty-aware gate that labels candidate process parameters <em>accept</em>, <em>flag</em> or <em>reject</em>.</li>
+          <li>Documented a subtle pitfall: variance-inflation checks miss exact algebraic rank deficiency in composite features.</li>
+        </ul>
+        <figure class="demo">
+          <canvas id="demoCanvas" aria-label="Interactive Gaussian process regression demo"></canvas>
+          <figcaption>
+            <span class="mono">Try it</span> — click to add observations and watch the
+            95% band tighten. <button class="linklike" id="demoReset">reset</button>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-meta">
+        <span class="tag">Published · Heliyon</span>
+        <span class="mono date">Jan 2023 — May 2024</span>
+      </div>
+      <h3>Undergraduate thesis: predicting laser-engraved groove geometry</h3>
+      <p class="muted">Advisor: Dr. Mohammad Muhshin Aziz Khan · SUST</p>
+      <ul class="bullets">
+        <li>A four-hidden-layer MLP jointly predicts V-groove depth and width on PMMA from laser power, scanning speed and defocus length (five levels each).</li>
+        <li><strong>R² &gt; 0.99</strong> on training and test sets; evaluated with MAPE, RMSE and MAE.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============================ EXPERIENCE ============================ -->
+  <section class="wrap section" id="experience">
+    <div class="section-head"><span class="num mono">04</span><h2>Education &amp; experience</h2></div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-when mono">Jun 2024 — Jul 2025</div>
+        <div class="tl-what">
+          <h3>Production Engineer</h3>
+          <p class="muted">Vision Electronics, PRAN-RFL Group · Narsingdi</p>
+          <ul class="bullets">
+            <li>Ran time studies, set standard minute values (SMV) and daily targets for TV, mobile-phone and home-appliance assembly lines.</li>
+            <li>Balanced lines to improve cycle time; reported line efficiency and OEE daily to senior management.</li>
+            <li>Applied Pareto analysis and root-cause analysis to defect data to find the main drivers of rework.</li>
+            <li>Rolled out 5S, Kaizen and Kanban; coordinated eTracker, a live production-tracking system.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when mono">Jan 2019 — May 2024</div>
+        <div class="tl-what">
+          <h3>B.Sc. in Industrial and Production Engineering</h3>
+          <p class="muted">Shahjalal University of Science and Technology · Sylhet</p>
+          <p>Thesis: <em>Machine Learning Approach to Predict V-shaped Channel Width and Depth on Acrylic Plastic Engraved with a CW CO<sub>2</sub> Laser</em> — later published in <em>Heliyon</em>.</p>
+          <p class="muted small">Coursework: Engineering Statistics · System Modeling &amp; Simulation · Advanced Manufacturing Systems · Operations Research · Production System Optimization · Supply Chain Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SKILLS ============================ -->
+  <section class="wrap section" id="skills">
+    <div class="section-head"><span class="num mono">05</span><h2>Toolkit</h2></div>
+    <div class="skills">
+      <div class="skill-card">
+        <h3>ML &amp; uncertainty</h3>
+        <p>Gaussian processes · MLPs · SVR · random forests · gradient boosting · polynomial ridge · conformal prediction · PICP / NLPD / MPIW</p>
+      </div>
+      <div class="skill-card">
+        <h3>Optimization &amp; simulation</h3>
+        <p>Discrete-event simulation · full-factorial DOE · Grey Wolf Optimizer · NSGA-II · linear programming</p>
+      </div>
+      <div class="skill-card">
+        <h3>Statistics &amp; explainability</h3>
+        <p>SHAP · partial dependence &amp; ICE plots · multicollinearity diagnostics (VIF, condition number)</p>
+      </div>
+      <div class="skill-card">
+        <h3>Python stack</h3>
+        <p>PyTorch · GPyTorch · scikit-learn · SciPy · statsmodels · NumPy · pandas · Matplotlib · Seaborn · SimPy</p>
+      </div>
+      <div class="skill-card">
+        <h3>Industrial engineering</h3>
+        <p>Time study &amp; SMV · line balancing · OEE · lean (5S, Kaizen, Kanban) · Pareto &amp; root-cause analysis</p>
+      </div>
+      <div class="skill-card">
+        <h3>Languages</h3>
+        <p>Bengali (native) · English — IELTS Academic 7.5</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="wrap section contact" id="contact">
+    <div class="contact-card">
+      <div>
+        <h2>Let's talk research.</h2>
+        <p>I'm actively seeking PhD opportunities in ML, uncertainty quantification and decision-making under uncertainty. I'd love to hear from faculty and labs working on related problems.</p>
+      </div>
+      <a class="btn primary big" href="mailto:niloydey48@gmail.com">niloydey48@gmail.com →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <span>© <span id="yr">2026</span> Niloy Dey</span>
+  <span class="mono">Dhaka, Bangladesh · GMT+6</span>
+</footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="#publications" data-sec="publications">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2zM4 19.5A2 2 0 0 0 6 22h14v-4"/><path d="M9 7h7M9 11h5"/></svg>
+    <span>Papers</span>
+  </a>
+  <a href="#research" data-sec="research">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7 15h10"/></svg>
+    <span>Research</span>
+  </a>
+  <a href="#experience" data-sec="experience">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+    <span>Experience</span>
+  </a>
+  <a href="#skills" data-sec="skills">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+    <span>Skills</span>
+  </a>
+  <a href="#contact" data-sec="contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    <span>Contact</span>
+  </a>
+</nav>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
