@@ -169,7 +169,7 @@ h1 { font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 3rem); line-height
 .linklike { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ============================ PUBLICATIONS ============================ */
-.pubs { list-style: none; margin: 0 0 20px; padding: 0; }
+.pubs { list-style: none; margin: 0 0 9px; padding: 0; }
 .pubs:last-of-type { margin-bottom: 0; }
 .pub { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
 .pub:last-child { border-bottom: 1px solid var(--line); }
