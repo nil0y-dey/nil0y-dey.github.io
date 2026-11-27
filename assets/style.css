@@ -282,13 +282,11 @@ a.pub-title:hover { color: var(--accent); text-decoration: none; }
 /* ============================ INTERACTIVE NAME ============================ */
 .name { cursor: default; white-space: nowrap; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
 .name .ch {
-  --t: 0;
   display: inline-block;
-  font-weight: calc(600 + var(--t) * 100);
-  color: color-mix(in srgb, var(--accent) calc(var(--t) * 100%), var(--ink));
   will-change: transform;
-  text-shadow: 0 0 calc(var(--t) * 22px) color-mix(in srgb, var(--accent) calc(var(--t) * 45%), transparent);
-  transition: font-weight .35s ease, color .35s ease, text-shadow .35s ease;
+  color: var(--ink);
+  -webkit-text-stroke: 0 transparent;
+  transition: color .18s ease, -webkit-text-stroke-color .18s ease;
 }
+.name .ch.hot { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
 .name .sp { display: inline-block; width: .26em; }
-.name.live .ch { transition-duration: .12s; }

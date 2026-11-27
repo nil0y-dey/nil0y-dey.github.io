@@ -83,6 +83,7 @@
         s.style.transform = 'none';
         var r = s.getBoundingClientRect();
         P[i].cx = r.left - hr.left + r.width / 2; P[i].cy = r.top - hr.top + r.height / 2;
+        P[i].w = r.width; P[i].hgt = r.height * .8;
         s.style.transform = '';
       });
     }
@@ -113,8 +114,11 @@
         var m = Math.sqrt(p.x * p.x + p.y * p.y), cap = 28;
         if (m > cap) { p.x *= cap / m; p.y *= cap / m; }
         p.r = Math.max(-22, Math.min(22, p.r));
-        var tt = t * t * (3 - 2 * t);
-        if (Math.abs(tt - p.t) > .01) { p.t = tt; chars[i].style.setProperty('--t', tt.toFixed(3)); }
+        // only the letter right under the cursor changes look
+        var hw = p.w / 2 + 4, hh = p.hgt / 2;
+        var bx = p.cx - (mx - hr.left), by = p.cy - (my - hr.top);
+        var hot = Math.abs(bx) < hw && Math.abs(by) < hh;
+        if (hot !== p.hot) { p.hot = hot; chars[i].classList.toggle('hot', hot); }
         chars[i].style.transform = 'translate(' + p.x.toFixed(2) + 'px,' + p.y.toFixed(2) + 'px) rotate(' + p.r.toFixed(2) + 'deg)';
         if (m > .05 || Math.abs(p.vx) + Math.abs(p.vy) > .05 || Math.abs(p.r) > .05 || t > 0) moving = true;
       });
