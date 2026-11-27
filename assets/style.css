@@ -288,5 +288,5 @@ a.pub-title:hover { color: var(--accent); text-decoration: none; }
   -webkit-text-stroke: 0 transparent;
   transition: color .18s ease, -webkit-text-stroke-color .18s ease;
 }
-.name .ch.hot { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+
 .name .sp { display: inline-block; width: .26em; }
