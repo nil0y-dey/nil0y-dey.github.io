@@ -56,6 +56,93 @@
       .forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
   }
 
+
+  /* ---------------- interactive name ---------------- */
+  (function () {
+    var h = document.querySelector('.hero h1');
+    if (!h) return;
+    var text = h.textContent.trim();
+    h.setAttribute('aria-label', text);
+    h.classList.add('name');
+    h.textContent = '';
+    var chars = [];
+    text.split('').forEach(function (c) {
+      var s = document.createElement('span');
+      s.setAttribute('aria-hidden', 'true');
+      if (c === ' ') { s.className = 'sp'; }
+      else { s.className = 'ch'; s.textContent = c; chars.push(s); }
+      h.appendChild(s);
+    });
+    if (reduceMotion) return;
+
+    // each letter is a little spring: pushed away by the cursor, pulled back home
+    var P = chars.map(function () { return { x: 0, y: 0, vx: 0, vy: 0, r: 0, vr: 0, cx: 0, cy: 0, t: 0 }; });
+    function measure() {
+      var hr = h.getBoundingClientRect();
+      chars.forEach(function (s, i) {
+        s.style.transform = 'none';
+        var r = s.getBoundingClientRect();
+        P[i].cx = r.left - hr.left + r.width / 2; P[i].cy = r.top - hr.top + r.height / 2;
+        s.style.transform = '';
+      });
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    document.fonts && document.fonts.ready.then(measure);
+
+    var R = 120, mx = -1e4, my = -1e4, running = false, last = 0;
+    function step(now) {
+      var dt = Math.min(0.033, (now - (last || now)) / 1000) || 0.016; last = now;
+      var hr = h.getBoundingClientRect(), moving = false;
+      P.forEach(function (p, i) {
+        var dx = p.cx + p.x - (mx - hr.left), dy = p.cy + p.y - (my - hr.top);
+        var d = Math.sqrt(dx * dx + dy * dy) || 1;
+        var t = Math.max(0, 1 - d / R);
+        if (t > 0) {                       // push away from cursor, with a bit of noise
+          var f = 2600 * t * t;
+          p.vx += (dx / d * f + (Math.random() - .5) * 900 * t) * dt;
+          p.vy += (dy / d * f + (Math.random() - .5) * 900 * t) * dt;
+          p.vr += (Math.random() - .5) * 2400 * t * dt;
+        }
+        // spring home + damping
+        p.vx += (-90 * p.x - 9 * p.vx) * dt;
+        p.vy += (-90 * p.y - 9 * p.vy) * dt;
+        p.vr += (-80 * p.r - 8 * p.vr) * dt;
+        p.x += p.vx * dt; p.y += p.vy * dt; p.r += p.vr * dt;
+        // keep it "a little" scattered
+        var m = Math.sqrt(p.x * p.x + p.y * p.y), cap = 28;
+        if (m > cap) { p.x *= cap / m; p.y *= cap / m; }
+        p.r = Math.max(-22, Math.min(22, p.r));
+        var tt = t * t * (3 - 2 * t);
+        if (Math.abs(tt - p.t) > .01) { p.t = tt; chars[i].style.setProperty('--t', tt.toFixed(3)); }
+        chars[i].style.transform = 'translate(' + p.x.toFixed(2) + 'px,' + p.y.toFixed(2) + 'px) rotate(' + p.r.toFixed(2) + 'deg)';
+        if (m > .05 || Math.abs(p.vx) + Math.abs(p.vy) > .05 || Math.abs(p.r) > .05 || t > 0) moving = true;
+      });
+      if (moving) requestAnimationFrame(step);
+      else { running = false; last = 0; chars.forEach(function (s) { s.style.transform = ''; }); }
+    }
+    function kick() { if (!running) { running = true; requestAnimationFrame(step); } }
+    function burst(power) {
+      P.forEach(function (p) {
+        var a = Math.random() * Math.PI * 2;
+        p.vx += Math.cos(a) * power; p.vy += Math.sin(a) * power - power * .4;
+        p.vr += (Math.random() - .5) * power * 1.2;
+      });
+      kick();
+    }
+
+    var heroEl = document.querySelector('.hero');
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (finePointer) {
+      heroEl.addEventListener('pointermove', function (e) { mx = e.clientX; my = e.clientY; kick(); });
+      heroEl.addEventListener('pointerleave', function () { mx = my = -1e4; kick(); });
+      h.addEventListener('click', function () { burst(320); });
+    } else {
+      h.addEventListener('touchstart', function () { burst(320); }, { passive: true });
+      setTimeout(function () { burst(220); }, 500);
+    }
+  })();
+
   /* ---------------- tiny Gaussian process ---------------- */
   function gp(xs, ys, grid, ell, sf2, sn2) {
     var n = xs.length, i, j, k;

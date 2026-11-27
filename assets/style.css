@@ -169,7 +169,7 @@ h1 { font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 3rem); line-height
 .linklike { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ============================ PUBLICATIONS ============================ */
-.pubs { list-style: none; margin: 0 0 9px; padding: 0; }
+.pubs { list-style: none; margin: 0 0 20px; padding: 0; }
 .pubs:last-of-type { margin-bottom: 0; }
 .pub { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
 .pub:last-child { border-bottom: 1px solid var(--line); }
@@ -278,3 +278,17 @@ a.pub-title:hover { color: var(--accent); text-decoration: none; }
   .hero-text h1 { font-size: 1.85rem; }
   .tabbar a { font-size: .6rem; }
 }
+
+/* ============================ INTERACTIVE NAME ============================ */
+.name { cursor: default; white-space: nowrap; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+.name .ch {
+  --t: 0;
+  display: inline-block;
+  font-weight: calc(600 + var(--t) * 100);
+  color: color-mix(in srgb, var(--accent) calc(var(--t) * 100%), var(--ink));
+  will-change: transform;
+  text-shadow: 0 0 calc(var(--t) * 22px) color-mix(in srgb, var(--accent) calc(var(--t) * 45%), transparent);
+  transition: font-weight .35s ease, color .35s ease, text-shadow .35s ease;
+}
+.name .sp { display: inline-block; width: .26em; }
+.name.live .ch { transition-duration: .12s; }
